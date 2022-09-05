@@ -5,6 +5,10 @@ def recieveNumber():
         num.append(int(digit))
     return num
 
+def outNumber(num):
+    for i in num:
+        print(i, end=" ")
+
 def reverseNumber(num):
     outNum = []
     for digit in reversed(num):
@@ -36,4 +40,4 @@ def addNumbers(firstNumber, secondNumber):
     
     return reverseNumber(outNum)
 
-print(addNumbers(recieveNumber(), recieveNumber()))
+outNumber(addNumbers(recieveNumber(), recieveNumber()))
