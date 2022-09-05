@@ -6,8 +6,12 @@ def recieveNumber():
     return num
 
 def outNumber(num):
+    if num[0] == 0:
+        del num[0]
+    print("output is: ", end='')
     for i in num:
-        print(i, end="")
+        print(i, end='')
+    print()
 
 def reverseNumber(num):
     outNum = []
@@ -42,3 +46,6 @@ def addNumbers(firstNumber, secondNumber):
     return reverseNumber(outNum)
 
 outNumber(addNumbers(recieveNumber(), recieveNumber()))
+
+
+examp = [4,5,7,3,254,5,5]
