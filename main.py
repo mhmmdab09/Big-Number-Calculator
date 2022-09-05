@@ -7,7 +7,7 @@ def recieveNumber():
 
 def outNumber(num):
     for i in num:
-        print(i, end=" ")
+        print(i, end="")
 
 def reverseNumber(num):
     outNum = []
@@ -29,7 +29,7 @@ def addNumbers(firstNumber, secondNumber):
     
     outNum = []
 
-    for n in range(len(maxLen)):
+    for n in range(len(maxLen) + 1):
         outNum.append(0)
 
     for n in range(len(maxLen)):
@@ -37,6 +37,7 @@ def addNumbers(firstNumber, secondNumber):
         outNum[n] += minLen[n]
         if outNum[n] > 9:
             outNum[n] -= 10
+            outNum[n + 1] += 1
     
     return reverseNumber(outNum)
 
