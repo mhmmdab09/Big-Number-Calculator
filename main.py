@@ -46,6 +46,3 @@ def addNumbers(firstNumber, secondNumber):
     return reverseNumber(outNum)
 
 outNumber(addNumbers(recieveNumber(), recieveNumber()))
-
-
-examp = [4,5,7,3,254,5,5]
