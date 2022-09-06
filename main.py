@@ -32,16 +32,21 @@ def addNumbers(firstNumber, secondNumber):
         minLen.append(0)
     
     outNum = []
-
-    for n in range(len(maxLen) + 1):
-        outNum.append(0)
+    carry = False
 
     for n in range(len(maxLen)):
-        outNum[n] += maxLen[n]
+        outNum.append(maxLen[n])
         outNum[n] += minLen[n]
+        if carry == True:
+            outNum[n] += 1
+            carry = False
         if outNum[n] > 9:
             outNum[n] -= 10
-            outNum[n + 1] += 1
+            carry = True
+
+    if carry == True :
+        outNum.append(1)
+            
     
     return reverseNumber(outNum)
 
