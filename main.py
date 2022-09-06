@@ -28,7 +28,7 @@ def addNumbers(firstNumber, secondNumber):
         maxLen = reverseNumber(secondNumber)
         minLen = reverseNumber(firstNumber)
     
-    for n in range(len(maxLen)):
+    for n in range(len(maxLen) - len(minLen)):
         minLen.append(0)
     
     outNum = []
