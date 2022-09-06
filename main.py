@@ -37,14 +37,14 @@ def addNumbers(firstNumber, secondNumber):
     for n in range(len(maxLen)):
         outNum.append(maxLen[n])
         outNum[n] += minLen[n]
-        if carry == True:
+        if carry:
             outNum[n] += 1
             carry = False
         if outNum[n] > 9:
             outNum[n] -= 10
             carry = True
 
-    if carry == True :
+    if carry:
         outNum.append(1)
             
     
