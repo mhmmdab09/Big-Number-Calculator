@@ -1,9 +1,16 @@
 def recieveNumber():
-    inputNumber = input("enter number : ")
-    num = []
-    for digit in inputNumber:
-        num.append(int(digit))
-    return num
+    inputNumbers = []
+    tempIn = ""
+    while True:
+        num = []
+        tempIn = input("Enter Number or 'end' : ")
+        if tempIn == "end":
+            break
+        else:
+            for word in tempIn:
+                num.append(int(word))
+        inputNumbers.append(num)
+    return inputNumbers
 
 def outNumber(num):
     if num[0] == 0:
@@ -20,7 +27,7 @@ def reverseNumber(num):
     return outNum
 
 
-def addNumbers(firstNumber, secondNumber):
+def addTwoNumbers(firstNumber, secondNumber):
     if(len(firstNumber) > len(secondNumber)):
         maxLen = reverseNumber(firstNumber)
         minLen = reverseNumber(secondNumber)
@@ -46,8 +53,15 @@ def addNumbers(firstNumber, secondNumber):
 
     if carry:
         outNum.append(1)
-            
     
     return reverseNumber(outNum)
 
-outNumber(addNumbers(recieveNumber(), recieveNumber()))
+
+def addMultiNumbers(numbers):
+    sum = []
+    for number in numbers:
+        sum = addTwoNumbers(sum, number)
+        print(sum)
+    return sum
+
+outNumber(addMultiNumbers(recieveNumber()))
