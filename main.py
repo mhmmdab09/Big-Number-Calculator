@@ -55,7 +55,4 @@ def addMultiNumbers(numbers):
         sum = addTwoNumbers(sum, number)
     return sum
 
-
-
-
 outNumber(addMultiNumbers(recieveNumber()))
