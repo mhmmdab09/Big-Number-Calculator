@@ -26,42 +26,36 @@ def reverseNumber(num):
         outNum.append(digit)
     return outNum
 
-
-def addTwoNumbers(firstNumber, secondNumber):
-    if(len(firstNumber) > len(secondNumber)):
-        maxLen = reverseNumber(firstNumber)
-        minLen = reverseNumber(secondNumber)
-    else:
-        maxLen = reverseNumber(secondNumber)
-        minLen = reverseNumber(firstNumber)
-    
-    for n in range(len(maxLen) - len(minLen)):
-        minLen.append(0)
-    
-    outNum = []
-    carry = False
-
-    for n in range(len(maxLen)):
-        outNum.append(maxLen[n])
-        outNum[n] += minLen[n]
-        if carry:
-            outNum[n] += 1
-            carry = False
-        if outNum[n] > 9:
-            outNum[n] -= 10
-            carry = True
-
-    if carry:
-        outNum.append(1)
-    
-    return reverseNumber(outNum)
-
-
 def addMultiNumbers(numbers):
+    def addTwoNumbers(firstNumber, secondNumber):
+        if(len(firstNumber) > len(secondNumber)):
+            maxLen = reverseNumber(firstNumber)
+            minLen = reverseNumber(secondNumber)
+        else:
+            maxLen = reverseNumber(secondNumber)
+            minLen = reverseNumber(firstNumber)
+        for n in range(len(maxLen) - len(minLen)):
+            minLen.append(0)
+        outNum = []
+        carry = False
+        for n in range(len(maxLen)):
+            outNum.append(maxLen[n])
+            outNum[n] += minLen[n]
+            if carry:
+                outNum[n] += 1
+                carry = False
+            if outNum[n] > 9:
+                outNum[n] -= 10
+                carry = True
+        if carry:
+            outNum.append(1)
+        return reverseNumber(outNum)
     sum = []
     for number in numbers:
         sum = addTwoNumbers(sum, number)
-        print(sum)
     return sum
+
+
+
 
 outNumber(addMultiNumbers(recieveNumber()))
