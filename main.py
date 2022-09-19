@@ -55,4 +55,33 @@ def addMultiNumbers(numbers):
         sum = addTwoNumbers(sum, number)
     return sum
 
-outNumber(addMultiNumbers(recieveNumber()))
+def mainMenu():
+    listOfFuncs = ["addMultiNumbers"]
+    print()
+    print(25 * "-")
+    print("Main Menu")
+    print(25 * "-")
+    userInput = int(input('''Choose the operation :
+    1- Sum
+    2- Sub
+    3- Multiply
+    4- Divide
+    
+    0- Exit
+    
+    enter number of the operation you want (only intigers) : '''))
+    if userInput == 1:
+        outNumber(addMultiNumbers(recieveNumber()))
+    elif userInput == 0:
+        exit()
+    elif userInput == 2:
+        print("*** This function will be available in the future ***")
+    elif userInput == 3:
+        print("*** This function will be available in the future ***")
+    elif userInput == 4:
+        print("*** This function will be available in the future ***")
+    else:
+        print("***** wrong input *****")
+
+while(True):
+    mainMenu()
