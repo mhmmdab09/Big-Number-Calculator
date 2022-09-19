@@ -56,7 +56,6 @@ def addMultiNumbers(numbers):
     return sum
 
 def mainMenu():
-    listOfFuncs = ["addMultiNumbers"]
     print()
     print(25 * "-")
     print("Main Menu")
